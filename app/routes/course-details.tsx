@@ -194,67 +194,7 @@ export default function CourseDetails() {
     // Lấy bài học đầu tiên
 
 
-    // API load thông tin khóa học 
-    useEffect(() => {
-        fetch(`${import.meta.env.VITE_API_URL}/api/courses/${maKhoaHoc}`)
-          .then((res) => res.json())
-          .then((data) => {
-            setTenKhoaHoc(data.tenKhoaHoc);
-            setMoTaKhoaHoc(data.moTaKhoaHoc);
-            setDoKho(data.doKho);
-            setGiaBan(data.giaBan);
-            setHinhAnh(data.hinhAnh);
-            setImagePreview(data.hinhAnh);
-          })
-          .catch((err) => console.error(err));
-    }, [maKhoaHoc]);
-
-    const [chuongHocList, setChuongHocList] = useState<
-        { maChuongHoc: string; tenChuongHoc: string; danhSachBaiHoc: any[] }[]
-    >([]);
-
-    const [listLecture, setListLecture] = useState<string[]>([]);
-
-    // API load chương, bài học
-    useEffect(() => {
-        const fetchLessons = async () => {
-        try {
-            const res = await fetch(`${import.meta.env.VITE_API_URL}/api/lessons/selection-lessons/${maKhoaHoc}`);
-            if (!res.ok) throw new Error("Lỗi khi lấy chương học!");
-
-            const lessons: { maChuongHoc: string; tenChuongHoc: string }[] = await res.json();
-
-            
-            const lessonInfo = await Promise.all(
-                lessons.map(async (lesson) => {
-                    const resLecture = await fetch(`${import.meta.env.VITE_API_URL}/api/lectures/by-lesson/${lesson.maChuongHoc}`);
-                    let danhSachBaiHoc = [];
-
-                    if (resLecture.ok) {
-                        danhSachBaiHoc = await resLecture.json();
-                    }
-
-                    return { 
-                        maChuongHoc: lesson.maChuongHoc, 
-                        tenChuongHoc: lesson.tenChuongHoc,
-                        danhSachBaiHoc 
-                    };
-                })
-            );
-
-            setChuongHocList(lessonInfo); 
-
-            const lectureList = lessonInfo.flatMap((ch) =>
-                ch.danhSachBaiHoc.map((bh: any) => bh.maBaiHoc)
-            );
-            setListLecture(lectureList);
-        } catch (error) {
-            console.error("Lỗi:", error);
-        }
-        };
-
-        fetchLessons();
-    }, [maKhoaHoc]); 
+    
 
     // Accordion
     const [openIndexes, setOpenIndexes] = useState<number[]>([]);
@@ -365,17 +305,17 @@ export default function CourseDetails() {
 
                         <ul className="thumb-list">
                             <li className="thumb-item">
-                                <img src="/icons/Code.svg" alt="" className="thumb-icon" />
+                                <img src="./icons/Code.svg" alt="" className="thumb-icon" />
                                 <span>Độ khó: {doKho}</span>
                             </li>
 
                             <li className="thumb-item">
-                                <img src="/icons/Article.svg" alt="" className="thumb-icon" />
+                                <img src="./icons/Article.svg" alt="" className="thumb-icon" />
                                 <span>Tổng số 100 bài học</span>
                             </li>
 
                             <li className="thumb-item">
-                                <img src="/icons/Clock.svg" alt="" className="thumb-icon" />
+                                <img src="./icons/Clock.svg" alt="" className="thumb-icon" />
                                 <span>Học mọi lúc mọi nơi</span>
                             </li>
                         </ul>
