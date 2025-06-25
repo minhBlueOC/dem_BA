@@ -189,7 +189,7 @@ export default function CourseDetails() {
     const [hinhAnh, setHinhAnh] = useState("");
     const [imagePreview, setImagePreview] = useState<string | null>(null);
     const [soDu, setSoDu] = useState(0);
-    // const [firstLecture, setFirstLecture] = useState("https://www.youtube.com/embed/o_VDcEy029M");
+    const [firstLecture, setFirstLecture] = useState("https://www.youtube.com/embed/o_VDcEy029M");
 
     // Lấy bài học đầu tiên
 
