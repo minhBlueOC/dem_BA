@@ -22,7 +22,7 @@ const mockDataFee = [
       "maKhoaHoc": "KH001",
       "tenKhoaHoc": "Javascript Pro",
       "moTaKhoaHoc": "Khóa học JavaScript Cơ Bản giúp bạn làm quen và nắm vững nền tảng ngôn ngữ lập trình JavaScript – công cụ không thể thiếu trong phát triển web hiện đại. Thông qua các bài học trực quan, bạn sẽ từng bước hiểu được cách JavaScript hoạt động, cách viết mã hiệu quả và áp dụng vào các dự án thực tế.",
-      "hinhAnh": "../../public/images/javascript_course.png",
+      "hinhAnh": "./images/javascript_course.png",
       "doKho": "Dễ",
       "giaBan": "500000.00",
       "maGiangVien": "ND001",
@@ -35,7 +35,7 @@ const mockDataFee = [
       "maKhoaHoc": "KH002",
       "tenKhoaHoc": "HTML - CSS Pro",
       "moTaKhoaHoc": "Xây dụng websites tĩnh với HTML và CSS cơ bản",
-      "hinhAnh": "../../public/images/HTML_CSS.png",
+      "hinhAnh": "./images/HTML_CSS.png",
       "doKho": "Dễ",
       "giaBan": "200000.00",
       "maGiangVien": "ND001",
@@ -48,7 +48,7 @@ const mockDataFee = [
       "maKhoaHoc": "KH004",
       "tenKhoaHoc": "Node.js",
       "moTaKhoaHoc": "Học về Node.js cơ bản",
-      "hinhAnh": "../../public/images/Nodejs.png",
+      "hinhAnh": "./images/Nodejs.png",
       "doKho": "Trung bình",
       "giaBan": "300000.00",
       "maGiangVien": "ND001",
@@ -61,7 +61,7 @@ const mockDataFee = [
       "maKhoaHoc": "KH005",
       "tenKhoaHoc": "React.js",
       "moTaKhoaHoc": "Học về React.js cơ bản",
-      "hinhAnh": "../../public/images/Reactjs.png",
+      "hinhAnh": "./images/Reactjs.png",
       "doKho": "Khó",
       "giaBan": "300000.00",
       "maGiangVien": "ND001",
@@ -77,7 +77,7 @@ const mockDataFree = [
       "maKhoaHoc": "KH006",
       "tenKhoaHoc": "C++ cơ bản",
       "moTaKhoaHoc": "Học lập trình C++ cơ bản",
-      "hinhAnh": "../../public/images/Cpp.png",
+      "hinhAnh": "./images/Cpp.png",
       "doKho": "Dễ",
       "giaBan": "0.00",
       "maGiangVien": "ND001",
@@ -90,7 +90,7 @@ const mockDataFree = [
       "maKhoaHoc": "KH007",
       "tenKhoaHoc": "Kiến thức nhập môn IT",
       "moTaKhoaHoc": "Học những kiến thức cơ bản về nhập môn IT",
-      "hinhAnh": "../../public/images/Nhapmon_course.png",
+      "hinhAnh": "./images/Nhapmon_course.png",
       "doKho": "Dễ",
       "giaBan": "0.00",
       "maGiangVien": "ND001",
@@ -103,7 +103,7 @@ const mockDataFree = [
       "maKhoaHoc": "KH008",
       "tenKhoaHoc": "Responsive web design",
       "moTaKhoaHoc": "Responsive web design với grid system 12 column",
-      "hinhAnh": "../../public/images/Responsive.png",
+      "hinhAnh": "./images/Responsive.png",
       "doKho": "Trung bình",
       "giaBan": "0.00",
       "maGiangVien": "ND001",
@@ -116,7 +116,7 @@ const mockDataFree = [
       "maKhoaHoc": "KH009",
       "tenKhoaHoc": "WSL Ubuntu",
       "moTaKhoaHoc": "Cơ bản về WSL Ubuntu",
-      "hinhAnh": "../../public/images/Ubuntu_course.png",
+      "hinhAnh": "./images/Ubuntu_course.png",
       "doKho": "Trung bình",
       "giaBan": "0.00",
       "maGiangVien": "ND001",
@@ -481,9 +481,9 @@ export default function Home() {
       <section className="why-container">
         <div className="why-hero">
           <div className="why-images">
-            <img className="why-img img-first" src="./public/images/Code1.png" alt="" />
-            <img className="why-img img-second" src="./public/images/Code2.png" alt="" />
-            <img className="why-img img-third" src="./public/images/Code3.png" alt="" />
+            <img className="why-img img-first" src="./images/Code1.png" alt="" />
+            <img className="why-img img-second" src="./images/Code2.png" alt="" />
+            <img className="why-img img-third" src="./images/Code3.png" alt="" />
           </div>
 
           <div className="why-content">
