@@ -9,8 +9,6 @@ import "../styles/course-details.css";
 import "../styles/Responsive/course-details.css";
 import PopUp from "~/components/PopUp";
 
-import type { bills } from "~/types/bills";
-
 interface UserInfo {
     maNguoiDung: string;
     email: string;
@@ -189,13 +187,7 @@ export default function CourseDetails() {
     const [hinhAnh, setHinhAnh] = useState("");
     const [imagePreview, setImagePreview] = useState<string | null>(null);
     const [soDu, setSoDu] = useState(0);
-    // const [firstLecture, setFirstLecture] = useState("https://www.youtube.com/embed/o_VDcEy029M");
-
-    // Lấy bài học đầu tiên
-
-
     
-
     // Accordion
     const [openIndexes, setOpenIndexes] = useState<number[]>([]);
 
@@ -322,7 +314,7 @@ export default function CourseDetails() {
                     </div>
                 </div>
             </div>
-
+{/* 
             <PopUp 
                 icon={"Question.svg"} 
                 secondOption={"Hủy bỏ"} 
@@ -345,10 +337,10 @@ export default function CourseDetails() {
                 isClosed={isClosedNoBalance}
                 className="popup-update"
                 // timeCount={3}
-            >
-                <Button type="button" to="/payment">Nạp tiền</Button>
-            </PopUp>
-            <Footer></Footer>
+            > */}
+                {/* <Button type="button" to="/payment">Nạp tiền</Button> */}
+            {/* </PopUp> */}
+            {/* <Footer></Footer> */}
         </div>
     );
 }
