@@ -81,3 +81,17 @@
     background: red;
     color: #fff;
 }
+
+.login-btn {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.login-google {
+    background: transparent;
+    border: 1px solid #ccc;
+    display: flex;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+}
