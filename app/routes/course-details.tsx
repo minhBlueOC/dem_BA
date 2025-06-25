@@ -277,7 +277,7 @@ export default function CourseDetails() {
                     <div className="course-video__thumb">
                         <iframe
                             className="course-video__iframe"
-                            // src={firstLecture}
+                            src={firstLecture}
                             title="YouTube Video"
                             allow="autoplay; encrypted-media"
                             allowFullScreen
@@ -292,15 +292,7 @@ export default function CourseDetails() {
                             className="thumb-btn"
                             children="Đăng ký ngay"
                             type="button"
-                            onClick={() => {
-                                if (parseFloat(giaBan) <= 0) {
-                                    console.log("Khoá học free");
-                                    
-                                } else {
-                                    console.log("Khoá học mất tiền");
-                                    handleOpenPay();
-                                }
-                            }}
+                            to="/learning"
                             />
 
                         <ul className="thumb-list">
