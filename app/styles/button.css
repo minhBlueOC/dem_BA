@@ -95,3 +95,8 @@
     width: 100%;
     justify-content: center;
 }
+
+.btn-join {
+    margin-top: 10px;
+    width: 200px;
+}

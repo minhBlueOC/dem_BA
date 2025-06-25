@@ -112,7 +112,7 @@ export default function RoadMap() {
                         Hàng nghìn người khác đang học lộ trình giống như bạn. 
                         Hãy tham gia hỏi đáp, chia sẻ và hỗ trợ nhau trong quá trình học nhé.
                     </p>
-                    <Button to="https://www.facebook.com/ly.van.minh.500001" type="button" className="btn-join">Tham gia ngay!!!</Button>
+                    <Button to="https://www.facebook.com/ly.van.minh.500001" type="button" className=" btn-join">Tham gia ngay!!!</Button>
                 </div>
             </div>
         </div>
