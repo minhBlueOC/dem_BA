@@ -49,9 +49,7 @@ export default function Login() {
 
                     <Button className="login-btn" type="submit" to="">Đăng nhập</Button>
                     <Button
-                        className="login-btn login-google"
-                        onClick={() => window.location.href = `${import.meta.env.VITE_API_URL}/auth/google`}
-                        >
+                        className="login-btn login-google">
                         <img className="login-icon" src="./icons/Google.svg" alt="" />
                         Đăng nhập bằng Google
                     </Button>

@@ -92,6 +92,7 @@
     border: 1px solid #ccc;
     display: flex;
     text-align: center;
+    width: 100%;
     justify-content: center;
 }
 
