@@ -7,6 +7,243 @@ import ChatBot from "~/components/ChatBot";
 import "../styles/learning.css";
 import "../styles/Responsive/learning.css";
 
+const mockCourseData = [
+  {
+    maChuongHoc: "CH001",
+    tenChuongHoc: "Giới thiệu về khóa học",
+    danhSachBaiHoc: [
+      {
+        maBaiHoc: "BH001",
+        tenBaiHoc: "Lời khuyên trước khóa học",
+        moTaBaiHoc: "Tổng quan về JavaScript và cách sử dụng.",
+        daHoanThanh: {
+            type: "Buffer",
+            data: [1], // hoặc [0] nếu chưa hoàn thành
+        },
+        // video: "https://www.youtube.com/embed/-jV06pqjUUc",
+        maChuongHoc: "CH001"
+      },
+      {
+        maBaiHoc: "BH002",
+        tenBaiHoc: "Cài đặt môi trường",
+        moTaBaiHoc: "Hướng dẫn thiết lập môi trường lập trình JS.",
+        daHoanThanh: {
+            type: "Buffer",
+            data: [1], // hoặc [0] nếu chưa hoàn thành
+        },
+        // video: "https://www.youtube.com/embed/efI98nT8Ffo",
+        maChuongHoc: "CH001"
+      }
+    ]
+  },
+  {
+    maChuongHoc: "CH002",
+    tenChuongHoc: "Biến, comments, build-in",
+    danhSachBaiHoc: [
+      {
+        maBaiHoc: "BH003",
+        tenBaiHoc: "Sử dụng Javascript với HTML",
+        moTaBaiHoc: "Cách sử dụng Javascript trong file HTML",
+        daHoanThanh: {
+            type: "Buffer",
+            data: [1], // hoặc [0] nếu chưa hoàn thành
+        },
+        // video: "https://www.youtube.com/embed/W0vEUmyvthQ",
+        maChuongHoc: "CH002"
+      },
+      {
+        maBaiHoc: "BH004",
+        tenBaiHoc: "Khái niệm biến và cách sử dụng",
+        moTaBaiHoc: "Cách khai báo các biến trong Javascript và cách sử dụng chúng",
+        daHoanThanh: {
+            type: "Buffer",
+            data: [1], // hoặc [0] nếu chưa hoàn thành
+        },
+        // video: "https://www.youtube.com/embed/CLbx37dqYEI",
+        maChuongHoc: "CH002"
+      },
+      {
+        maBaiHoc: "BH005",
+        tenBaiHoc: "Comments trong Javascript",
+        moTaBaiHoc: "Sử dụng comments trong Javascript",
+        daHoanThanh: {
+            type: "Buffer",
+            data: [1], // hoặc [0] nếu chưa hoàn thành
+        },
+        // video: "https://www.youtube.com/embed/xRpXBEq6TOY",
+        maChuongHoc: "CH002"
+      },
+      {
+        maBaiHoc: "BH006",
+        tenBaiHoc: "Thuật ngữ Built-in",
+        moTaBaiHoc: "Hàm Built-in trong Javascript",
+        daHoanThanh: {
+  type: "Buffer",
+  data: [1], // hoặc [0] nếu chưa hoàn thành
+},
+        // video: "https://www.youtube.com/embed/rSV33HGotgE",
+        maChuongHoc: "CH002"
+      },
+      {
+        maBaiHoc: "BH007",
+        tenBaiHoc: "Toán tử nối chuỗi",
+        moTaBaiHoc: "Toán tử nối chuỗi",
+        daHoanThanh: {
+  type: "Buffer",
+  data: [1], // hoặc [0] nếu chưa hoàn thành
+},
+        // video: "https://www.youtube.com/embed/QCLVU6cZU_E",
+        maChuongHoc: "CH002"
+      }
+    ]
+  },
+  // ...
+  {
+    maChuongHoc: "CH011",
+    tenChuongHoc: "Vòng lặp",
+    danhSachBaiHoc: [
+      {
+        maBaiHoc: "BH034",
+        tenBaiHoc: "Vòng lặp trong JavaScript",
+        moTaBaiHoc: "Vòng lặp trong JavaScript | JavaScript Loop",
+        daHoanThanh: {
+  type: "Buffer",
+  data: [1], // hoặc [0] nếu chưa hoàn thành
+},
+        // video: "https://www.youtube.com/embed/1zeMUJeBkeA",
+        maChuongHoc: "CH011"
+      },
+      {
+        maBaiHoc: "BH035",
+        tenBaiHoc: "Vòng lặp For",
+        moTaBaiHoc: "Vòng lặp For trong JavaScript | For loop",
+        daHoanThanh: {
+  type: "Buffer",
+  data: [1], // hoặc [0] nếu chưa hoàn thành
+},
+        // video: "https://www.youtube.com/embed/tzaq2ay3Q0w",
+        maChuongHoc: "CH011"
+      },
+      {
+        maBaiHoc: "BH036",
+        tenBaiHoc: "Vòng lặp For phần 2",
+        moTaBaiHoc: "Vòng lặp For trong JavaScript | For loop phần 2",
+        daHoanThanh: {
+  type: "Buffer",
+  data: [1], // hoặc [0] nếu chưa hoàn thành
+},
+        // video: "https://www.youtube.com/embed/L0a9ZgIEjW8",
+        maChuongHoc: "CH011"
+      },
+      {
+        maBaiHoc: "BH037",
+        tenBaiHoc: "Vòng lặp For phần 3",
+        moTaBaiHoc: "Vòng lặp For trong JavaScript | For loop phần 3",
+        daHoanThanh: {
+  type: "Buffer",
+  data: [1], // hoặc [0] nếu chưa hoàn thành
+},
+        // video: "https://www.youtube.com/embed/LAlvupZV5iU",
+        maChuongHoc: "CH011"
+      },
+      {
+        maBaiHoc: "BH038",
+        tenBaiHoc: "Vòng lặp For/in",
+        moTaBaiHoc: "Vòng lặp For/in trong JavaScript | For...in loop",
+        daHoanThanh: {
+  type: "Buffer",
+  data: [1], // hoặc [0] nếu chưa hoàn thành
+},
+        // video: "https://www.youtube.com/embed/stbbeMsgldc",
+        maChuongHoc: "CH011"
+      },
+      {
+        maBaiHoc: "BH039",
+        tenBaiHoc: "Vòng lặp For/of",
+        moTaBaiHoc: "Vòng lặp For/of trong JavaScript | For...of loop",
+        daHoanThanh: {
+  type: "Buffer",
+  data: [1], // hoặc [0] nếu chưa hoàn thành
+},
+        // video: "https://www.youtube.com/embed/qhShGK5Y10U",
+        maChuongHoc: "CH011"
+      },
+      {
+        maBaiHoc: "BH040",
+        tenBaiHoc: "Vòng lặp While",
+        moTaBaiHoc: "Vòng lặp While trong JavaScript | JavaScript while loop",
+        daHoanThanh: {
+  type: "Buffer",
+  data: [1], // hoặc [0] nếu chưa hoàn thành
+},
+        // video: "https://www.youtube.com/embed/rdH9Dm7IVxU",
+        maChuongHoc: "CH011"
+      },
+      {
+        maBaiHoc: "BH041",
+        tenBaiHoc: "Vòng lặp Do/while",
+        moTaBaiHoc: "Vòng lặp Do/while trong JavaScript | Do...while loop",
+        daHoanThanh: {
+  type: "Buffer",
+  data: [1], // hoặc [0] nếu chưa hoàn thành
+},
+        // video: "https://www.youtube.com/embed/Or48jZzowUk",
+        maChuongHoc: "CH011"
+      },
+      {
+        maBaiHoc: "BH042",
+        tenBaiHoc: "Break và Continue",
+        moTaBaiHoc: "Break và Continue trong vòng lặp | JavaScript Break and Continue",
+        daHoanThanh: {
+  type: "Buffer",
+  data: [1], // hoặc [0] nếu chưa hoàn thành
+},
+        // video: "https://www.youtube.com/embed/zSHt_S7W2a8",
+        maChuongHoc: "CH011"
+      },
+      {
+        maBaiHoc: "BH043",
+        tenBaiHoc: "Vòng lặp lồng nhau",
+        moTaBaiHoc: "Vòng lặp lồng nhau (Nested loop) | JavaScript nested loop",
+        daHoanThanh: {
+  type: "Buffer",
+  data: [1], // hoặc [0] nếu chưa hoàn thành
+},
+        // video: "https://www.youtube.com/embed/hRaSotOvTjY",
+        maChuongHoc: "CH011"
+      },
+      {
+        maBaiHoc: "BH044",
+        tenBaiHoc: "Ví dụ mở rộng về vòng lặp",
+        moTaBaiHoc: "Ví dụ mở rộng về vòng lặp | JavaScript Loops",
+        daHoanThanh: {
+  type: "Buffer",
+  data: [1], // hoặc [0] nếu chưa hoàn thành
+},
+        // video: "https://www.youtube.com/embed/MY-eJLzbSZc",
+        maChuongHoc: "CH011"
+      }
+    ]
+  },
+  {
+    maChuongHoc: "CH020",
+    tenChuongHoc: "Tham khảo thêm",
+    danhSachBaiHoc: [
+      {
+        maBaiHoc: "BH045",
+        tenBaiHoc: "Polyfill là gì ?",
+        moTaBaiHoc: "Polyfill là gì ?",
+        daHoanThanh: {
+  type: "Buffer",
+  data: [1], // hoặc [0] nếu chưa hoàn thành
+},
+        // video: "https://www.youtube.com/embed/zFO-sSfReFs",
+        maChuongHoc: "CH020"
+      }
+    ]
+  }
+];
+
 export default function Learning() {
     const { maKhoaHoc } = useParams();
 
@@ -123,7 +360,7 @@ export default function Learning() {
                 <div className="learning-sidebar ">
                     <div className="learning-accordion">
                         <div className="learning-accordion__inner">
-                            {chuongHocList.map((chuong, index) => {
+                            {mockCourseData.map((chuong, index) => {
                                 const isOpen = openIndexes.includes(index);
 
                                 return (
@@ -189,48 +426,6 @@ export default function Learning() {
                                 );
                                 })}
 
-                        </div>
-                    </div>
-                </div>
-
-                {/* Side bar mobile*/}
-                <div className={`learning-sidebar__mobile ${isSidebarOpen ? 'open' : ''}`}>
-                    <div className="learning-sidebar__act">
-                        <button onClick={handleCloseMenu} className="learning-sidebar__btn">
-                            <img className="learning-sidebar__icon" src="/icons/Arrow-left.svg" alt="" />
-                        </button>
-                    </div>
-                    <div className="learning-accordion">
-                        <div className="learning-accordion__inner">
-                            {chuongHocList.map((chuong, index) => (
-                            <div className="learning-accordion__item" key={chuong.maChuongHoc}>
-                                <div className="learning-accordion__head">
-                                    <button type="button" className="learning-accordion__lesson" onClick={() => toggleAccordion(index)}>
-                                        {index + 1}. {chuong.tenChuongHoc} 
-                                    </button>
-                                </div>
-
-                                <div className={`learning-accordion__content ${openIndexes.includes(index) ? "open" : ""}`}>
-                                    <ul className="learning-accordion__list">
-                                        {chuong.danhSachBaiHoc.map((baiHoc, baiIndex) => (
-                                            <li key={baiHoc.maBaiHoc} className="learning-accordion__list--item">
-                                                <button
-                                                    onClick={async () => {
-                                                        await handleCloseMenu()
-                                                    }}
-                                                    className="learning-accordion__list--btn"
-                                                >
-                                                    {index + 1}.{baiIndex + 1} {baiHoc.tenBaiHoc}
-                                                    <span className={`learning-accordion__check ${baiHoc.daHoanThanh?.data?.[0] === 1 ? 'check-done' : 'check-not__done'}`}>
-                                                        <img src="/icons/Check-white.svg" alt="" />
-                                                    </span>
-                                                </button>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </div>
-                            ))}
                         </div>
                     </div>
                 </div>
