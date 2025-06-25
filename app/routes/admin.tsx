@@ -1,201 +1,179 @@
-// import { useEffect, useRef, useState } from "react";
-// import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-// import Header from "~/components/Header";
-// import AdminNav from "~/components/Admin/AdminNav";
-// import AdminCourse from "~/components/Admin/Course";
-// import SearchEngine from "~/components/Search-engine";
-// import Pagination from "~/components/Pagination";
+import Header from "~/components/Header";
+import AdminNav from "~/components/Admin/AdminNav";
+import AdminCourse from "~/components/Admin/Course";
+import SearchEngine from "~/components/Search-engine";
+import Pagination from "~/components/Pagination";
 
-// import type {courses} from "../types/courses";
+import type {courses} from "../types/courses";
 
-// import "../styles/Admin/admin.css";
-// import "../styles/Admin/admin_course.css";
+import "../styles/Admin/admin.css";
+import "../styles/Admin/admin_course.css";
 
-// interface ApiCoursesResponse {
-//   data: courses[];
-//   pagination?: {
-//     totalItems?: number;
-//     totalPages?: number;
-//     currentPage?: number;
-//     pageSize?: number;
-//   };
-// }
+const khoaHocMockData = [
+  {
+    maKhoaHoc: "KH001",
+    tenKhoaHoc: "Javascript Pro",
+    moTaKhoaHoc: "Khóa học JavaScript Cơ Bản giúp bạn làm quen và nắm vững nền tảng ngôn ngữ lập trình JavaScript – công cụ không thể thiếu trong phát triển web hiện đại. Thông qua các bài học trực quan, bạn sẽ từng bước hiểu được cách JavaScript hoạt động, cách viết mã hiệu quả và áp dụng vào các dự án thực tế.",
+    hinhAnh: "./images/javascript_course.png",
+    giaBan: "500000.00",
+    doKho: "Dễ",
+    tongSoBaiHoc: 45,
+    soLuongDangKy: 2,
+    maGiangVien: "ND001",
+    tenNguoiDung: "MLearning",
+    anhDaiDien: "http://localhost:1000/uploads/defaultAvatar.png"
+  },
+  {
+    maKhoaHoc: "KH002",
+    tenKhoaHoc: "HTML - CSS Pro",
+    moTaKhoaHoc: "Xây dụng websites tĩnh với HTML và CSS cơ bản",
+    hinhAnh: "./images/HTML_CSS.png",
+    giaBan: "200000.00",
+    doKho: "Dễ",
+    tongSoBaiHoc: 0,
+    soLuongDangKy: 0,
+    maGiangVien: "ND001",
+    tenNguoiDung: "MLearning",
+    anhDaiDien: "http://localhost:1000/uploads/defaultAvatar.png"
+  },
+  {
+    maKhoaHoc: "KH003",
+    tenKhoaHoc: "Ngôn ngữ Sass",
+    moTaKhoaHoc: "Học về ngôn ngữ Sass cơ bản",
+    hinhAnh: "./images/HTML_CSS.png",
+    giaBan: "100000.00",
+    doKho: "Trung bình",
+    tongSoBaiHoc: 7,
+    soLuongDangKy: 1,
+    maGiangVien: "ND001",
+    tenNguoiDung: "MLearning",
+    anhDaiDien: "http://localhost:1000/uploads/defaultAvatar.png"
+  },
+  {
+    maKhoaHoc: "KH004",
+    tenKhoaHoc: "Node.js",
+    moTaKhoaHoc: "Học về Node.js cơ bản",
+    hinhAnh: "./images/Nodejs.png",
+    giaBan: "300000.00",
+    doKho: "Trung bình",
+    tongSoBaiHoc: 35,
+    soLuongDangKy: 2,
+    maGiangVien: "ND001",
+    tenNguoiDung: "MLearning",
+    anhDaiDien: "http://localhost:1000/uploads/defaultAvatar.png"
+  },
+  {
+    maKhoaHoc: "KH005",
+    tenKhoaHoc: "React.js",
+    moTaKhoaHoc: "Học về React.js cơ bản",
+    hinhAnh: "./images/Reactjs.png",
+    giaBan: "300000.00",
+    doKho: "Khó",
+    tongSoBaiHoc: 80,
+    soLuongDangKy: 2,
+    maGiangVien: "ND001",
+    tenNguoiDung: "MLearning",
+    anhDaiDien: "http://localhost:1000/uploads/defaultAvatar.png"
+  }
+];
 
-// export default function Admin() {
-//   const navigate = useNavigate();
 
-//   const [courses, setCourses] = useState<courses[]>([]);
-//   const [firstCall, setFirstCall] = useState(true);
-//   const [totalPages, setTotalPages] = useState(1);;
+interface ApiCoursesResponse {
+  data: courses[];
+  pagination?: {
+    totalItems?: number;
+    totalPages?: number;
+    currentPage?: number;
+    pageSize?: number;
+  };
+}
 
-//   // Kiểm tra role
-//   useEffect(() => {
-//     const getRole = async () => {
-//       try {
-//         const res = await fetch(`${import.meta.env.VITE_API_URL}/role`, {
-//           method: "GET",
-//           credentials: "include", 
-//         });
+export default function Admin() {
+  const navigate = useNavigate();
 
-//         if (!res.ok) {
-//           navigate("/login"); 
-//           return;
-//         }
+  const [courses, setCourses] = useState<courses[]>([]);
+  const [firstCall, setFirstCall] = useState(true);
+  const [totalPages, setTotalPages] = useState(1);;
 
-//         const data = await res.json();
-
-//         if (data.role !== "Admin") {
-//           navigate("/"); 
-//         }
-//       } catch (err) {
-//         navigate("/login"); 
-//       }
-//     };
-
-//     getRole(); 
-//   }, [navigate]);
-
-
-//   // Lấy khóa học
-//   const fetchCourses = ( page: number, firstCall: boolean, setFirstCall: React.Dispatch<React.SetStateAction<boolean>> ) => {
-//     const url = new URL(`${import.meta.env.VITE_API_URL}/api/courses`);
-//     url.searchParams.append('page', page.toString());
-//     url.searchParams.append('pageSize', '5');
-
-//     if (firstCall) {
-//       url.searchParams.append('count', 'true');
-//     }
-
-//     fetch(url.toString(), {
-//       method: 'GET',
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//     })
-//       .then(res => res.json())
-//       .then((data: ApiCoursesResponse) => {
-//         setCourses(data.data || []);
-        
-//         if (firstCall && data.pagination?.totalPages) {
-//           setTotalPages(data.pagination.totalPages);
-//           setFirstCall(false);
-//         }
-//       })
-//       .catch((error) => console.error('Lỗi khi lấy khóa học:', error));
-//   };
-
-//   // Lấy khóa học lần đầu (trả ra tổng trang)
-//   useEffect(() => {
-//     fetchCourses(1, firstCall, setFirstCall);
-//   }, []);
-
-//   // Chuyển trang (lấy khóa học)
-//   const onPageChange = (page: number) => {
-//     fetchCourses(page, firstCall, setFirstCall);
-//   };
-
-//   // Tìm kiếm
-//   const [searchResult, setSearchResult] = useState<courses[]>([]);
-
-//   const handleSearch = (query: string) => {
-//     fetch(`${import.meta.env.VITE_API_URL}/api/courses/search/${query}`)
-//       .then((res) => {
-//         if (!res.ok) { throw new Error("Lỗi khi gọi API tìm kiếm"); }
-//         return res.json();
-//       })
-//       .then((resData: courses[]) => {
-//         if (Array.isArray(resData)) {
-//           setSearchResult(resData);
-//         } else {
-//           setSearchResult([]);
-//         }
-//       })
-//       .catch((err) => {
-//         console.error("Lỗi:", err);
-//         setSearchResult([]);
-//       });
-//   };
-
-//   const goToItem = (item: any) => { navigate(`/admin-course-details/${item.maKhoaHoc}`); };
   
-//   return (
-//     <div className="admin-wrapper">
-//       <Header className="header-admin" title="Trang quản trị"></Header>
-//       <AdminNav></AdminNav>
-//       <SearchEngine
-//         placeholder="Tìm kiếm khóa học..."
-//         getData={handleSearch}
-//         data={searchResult}
-//         renderItem={(item) => (
-//           <div
-//             className="search-engine__item"
-//             key={item.maKhoaHoc}
-//             onClick={() => goToItem(item)}
-//           >
-//             <div className="search-engine__thumb">
-//               <img
-//                 src={item.hinhAnh || "/images/COURSE.png"}
-//                 alt={item.tenKhoaHoc}
-//                 className="search-engine__image"
-//               />
-//             </div>
-//             <div>
-//               <span className="search-engine__name">{item.tenKhoaHoc}</span>
-//             </div>
-//           </div>
-//         )}
-//       />
-//       <Pagination totalPages={totalPages} onPageChange={(page) => onPageChange(page)} />
+  return (
+    <div className="admin-wrapper">
+      <Header className="header-admin" title="Trang quản trị"></Header>
+      <AdminNav></AdminNav>
+      <SearchEngine
+              placeholder="Tìm kiếm khóa học..."
 
-//       {/* Danh sách khóa học */}
-//       <div className="list-course">
+              renderItem={(item) => (
+                  <div
+                      className="search-engine__item"
 
-//         {/* Phần head */}
-//         <div className="list-course__head">
-//           {/* Mã khóa học */}
-//           <div className="course-id course-id_head">
-//               <span>ID</span>
-//           </div>
 
-//           {/* Tên khóa học */}
-//           <div className="course-name course-name_head">
-//               <span>TÊN KHÓA HỌC</span>
-//           </div>
+                  >
+                      <div className="search-engine__thumb">
+                          <img
+                              src={"/images/COURSE.png"}
+                              className="search-engine__image" />
+                      </div>
+                      <div>
+                          <span className="search-engine__name"></span>
+                      </div>
+                  </div>
+              )} getData={function (query: string): void {
+                  throw new Error("Function not implemented.");
+              } } data={[]}      />
+      <Pagination totalPages={totalPages} />
 
-//           {/* Hình ảnh */}
-//           <div className="course-image_head">
-//               <span>HÌNH ẢNH</span>
-//           </div>
+      {/* Danh sách khóa học */}
+      <div className="list-course">
 
-//           {/* Độ khó */}
-//           <div className="course-level_head">
-//               <span>ĐỘ KHÓ</span>
-//           </div>
+        {/* Phần head */}
+        <div className="list-course__head">
+          {/* Mã khóa học */}
+          <div className="course-id course-id_head">
+              <span>ID</span>
+          </div>
 
-//           {/* Giá */}
-//           <div className="course-price course-price_head">
-//               <span>GIÁ (VNĐ)</span>
-//           </div>
-//         </div>
+          {/* Tên khóa học */}
+          <div className="course-name course-name_head">
+              <span>TÊN KHÓA HỌC</span>
+          </div>
 
-//         {/* Phần hiển thị các khóa học */}
-//         <div className="list-course__inner">
-//           {
-//             courses.map((course) => (
-//               <AdminCourse 
-//                 key={course.maKhoaHoc}
-//                 maKhoaHoc={course.maKhoaHoc} 
-//                 tenKhoaHoc={course.tenKhoaHoc} 
-//                 doKho={course.doKho} 
-//                 hinhAnh={course.hinhAnh} 
-//                 giaBan={course.giaBan} 
-//                 moTaKhoaHoc={course.moTaKhoaHoc || "Không có mô tả"} 
-//               />
-//             ))
-//           }
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
+          {/* Hình ảnh */}
+          <div className="course-image_head">
+              <span>HÌNH ẢNH</span>
+          </div>
+
+          {/* Độ khó */}
+          <div className="course-level_head">
+              <span>ĐỘ KHÓ</span>
+          </div>
+
+          {/* Giá */}
+          <div className="course-price course-price_head">
+              <span>GIÁ (VNĐ)</span>
+          </div>
+        </div>
+
+        {/* Phần hiển thị các khóa học */}
+        <div className="list-course__inner">
+          {
+            khoaHocMockData.map((course) => (
+              <AdminCourse 
+                key={course.maKhoaHoc}
+                maKhoaHoc={course.maKhoaHoc} 
+                tenKhoaHoc={course.tenKhoaHoc} 
+                doKho={course.doKho} 
+                hinhAnh={course.hinhAnh} 
+                giaBan={course.giaBan} 
+                moTaKhoaHoc={course.moTaKhoaHoc || "Không có mô tả"} 
+              />
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  );
+}
