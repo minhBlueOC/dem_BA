@@ -25,14 +25,14 @@ const mockCourseData = [
         maBaiHoc: "BH001",
         tenBaiHoc: "Lời khuyên trước khóa học",
         moTaBaiHoc: "Tổng quan về JavaScript và cách sử dụng.",
-        video: "https://www.youtube.com/embed/-jV06pqjUUc",
+        // video: "https://www.youtube.com/embed/-jV06pqjUUc",
         maChuongHoc: "CH001"
       },
       {
         maBaiHoc: "BH002",
         tenBaiHoc: "Cài đặt môi trường",
         moTaBaiHoc: "Hướng dẫn thiết lập môi trường lập trình JS.",
-        video: "https://www.youtube.com/embed/efI98nT8Ffo",
+        // video: "https://www.youtube.com/embed/efI98nT8Ffo",
         maChuongHoc: "CH001"
       }
     ]
@@ -45,35 +45,35 @@ const mockCourseData = [
         maBaiHoc: "BH003",
         tenBaiHoc: "Sử dụng Javascript với HTML",
         moTaBaiHoc: "Cách sử dụng Javascript trong file HTML",
-        video: "https://www.youtube.com/embed/W0vEUmyvthQ",
+        // video: "https://www.youtube.com/embed/W0vEUmyvthQ",
         maChuongHoc: "CH002"
       },
       {
         maBaiHoc: "BH004",
         tenBaiHoc: "Khái niệm biến và cách sử dụng",
         moTaBaiHoc: "Cách khai báo các biến trong Javascript và cách sử dụng chúng",
-        video: "https://www.youtube.com/embed/CLbx37dqYEI",
+        // video: "https://www.youtube.com/embed/CLbx37dqYEI",
         maChuongHoc: "CH002"
       },
       {
         maBaiHoc: "BH005",
         tenBaiHoc: "Comments trong Javascript",
         moTaBaiHoc: "Sử dụng comments trong Javascript",
-        video: "https://www.youtube.com/embed/xRpXBEq6TOY",
+        // video: "https://www.youtube.com/embed/xRpXBEq6TOY",
         maChuongHoc: "CH002"
       },
       {
         maBaiHoc: "BH006",
         tenBaiHoc: "Thuật ngữ Built-in",
         moTaBaiHoc: "Hàm Built-in trong Javascript",
-        video: "https://www.youtube.com/embed/rSV33HGotgE",
+        // video: "https://www.youtube.com/embed/rSV33HGotgE",
         maChuongHoc: "CH002"
       },
       {
         maBaiHoc: "BH007",
         tenBaiHoc: "Toán tử nối chuỗi",
         moTaBaiHoc: "Toán tử nối chuỗi",
-        video: "https://www.youtube.com/embed/QCLVU6cZU_E",
+        // video: "https://www.youtube.com/embed/QCLVU6cZU_E",
         maChuongHoc: "CH002"
       }
     ]
@@ -87,77 +87,77 @@ const mockCourseData = [
         maBaiHoc: "BH034",
         tenBaiHoc: "Vòng lặp trong JavaScript",
         moTaBaiHoc: "Vòng lặp trong JavaScript | JavaScript Loop",
-        video: "https://www.youtube.com/embed/1zeMUJeBkeA",
+        // video: "https://www.youtube.com/embed/1zeMUJeBkeA",
         maChuongHoc: "CH011"
       },
       {
         maBaiHoc: "BH035",
         tenBaiHoc: "Vòng lặp For",
         moTaBaiHoc: "Vòng lặp For trong JavaScript | For loop",
-        video: "https://www.youtube.com/embed/tzaq2ay3Q0w",
+        // video: "https://www.youtube.com/embed/tzaq2ay3Q0w",
         maChuongHoc: "CH011"
       },
       {
         maBaiHoc: "BH036",
         tenBaiHoc: "Vòng lặp For phần 2",
         moTaBaiHoc: "Vòng lặp For trong JavaScript | For loop phần 2",
-        video: "https://www.youtube.com/embed/L0a9ZgIEjW8",
+        // video: "https://www.youtube.com/embed/L0a9ZgIEjW8",
         maChuongHoc: "CH011"
       },
       {
         maBaiHoc: "BH037",
         tenBaiHoc: "Vòng lặp For phần 3",
         moTaBaiHoc: "Vòng lặp For trong JavaScript | For loop phần 3",
-        video: "https://www.youtube.com/embed/LAlvupZV5iU",
+        // video: "https://www.youtube.com/embed/LAlvupZV5iU",
         maChuongHoc: "CH011"
       },
       {
         maBaiHoc: "BH038",
         tenBaiHoc: "Vòng lặp For/in",
         moTaBaiHoc: "Vòng lặp For/in trong JavaScript | For...in loop",
-        video: "https://www.youtube.com/embed/stbbeMsgldc",
+        // video: "https://www.youtube.com/embed/stbbeMsgldc",
         maChuongHoc: "CH011"
       },
       {
         maBaiHoc: "BH039",
         tenBaiHoc: "Vòng lặp For/of",
         moTaBaiHoc: "Vòng lặp For/of trong JavaScript | For...of loop",
-        video: "https://www.youtube.com/embed/qhShGK5Y10U",
+        // video: "https://www.youtube.com/embed/qhShGK5Y10U",
         maChuongHoc: "CH011"
       },
       {
         maBaiHoc: "BH040",
         tenBaiHoc: "Vòng lặp While",
         moTaBaiHoc: "Vòng lặp While trong JavaScript | JavaScript while loop",
-        video: "https://www.youtube.com/embed/rdH9Dm7IVxU",
+        // video: "https://www.youtube.com/embed/rdH9Dm7IVxU",
         maChuongHoc: "CH011"
       },
       {
         maBaiHoc: "BH041",
         tenBaiHoc: "Vòng lặp Do/while",
         moTaBaiHoc: "Vòng lặp Do/while trong JavaScript | Do...while loop",
-        video: "https://www.youtube.com/embed/Or48jZzowUk",
+        // video: "https://www.youtube.com/embed/Or48jZzowUk",
         maChuongHoc: "CH011"
       },
       {
         maBaiHoc: "BH042",
         tenBaiHoc: "Break và Continue",
         moTaBaiHoc: "Break và Continue trong vòng lặp | JavaScript Break and Continue",
-        video: "https://www.youtube.com/embed/zSHt_S7W2a8",
+        // video: "https://www.youtube.com/embed/zSHt_S7W2a8",
         maChuongHoc: "CH011"
       },
       {
         maBaiHoc: "BH043",
         tenBaiHoc: "Vòng lặp lồng nhau",
         moTaBaiHoc: "Vòng lặp lồng nhau (Nested loop) | JavaScript nested loop",
-        video: "https://www.youtube.com/embed/hRaSotOvTjY",
+        // video: "https://www.youtube.com/embed/hRaSotOvTjY",
         maChuongHoc: "CH011"
       },
       {
         maBaiHoc: "BH044",
         tenBaiHoc: "Ví dụ mở rộng về vòng lặp",
         moTaBaiHoc: "Ví dụ mở rộng về vòng lặp | JavaScript Loops",
-        video: "https://www.youtube.com/embed/MY-eJLzbSZc",
+        // video: "https://www.youtube.com/embed/MY-eJLzbSZc",
         maChuongHoc: "CH011"
       }
     ]
@@ -170,7 +170,7 @@ const mockCourseData = [
         maBaiHoc: "BH045",
         tenBaiHoc: "Polyfill là gì ?",
         moTaBaiHoc: "Polyfill là gì ?",
-        video: "https://www.youtube.com/embed/zFO-sSfReFs",
+        // video: "https://www.youtube.com/embed/zFO-sSfReFs",
         maChuongHoc: "CH020"
       }
     ]
@@ -189,7 +189,7 @@ export default function CourseDetails() {
     const [hinhAnh, setHinhAnh] = useState("");
     const [imagePreview, setImagePreview] = useState<string | null>(null);
     const [soDu, setSoDu] = useState(0);
-    const [firstLecture, setFirstLecture] = useState("https://www.youtube.com/embed/o_VDcEy029M");
+    // const [firstLecture, setFirstLecture] = useState("https://www.youtube.com/embed/o_VDcEy029M");
 
     // Lấy bài học đầu tiên
 
@@ -277,7 +277,7 @@ export default function CourseDetails() {
                     <div className="course-video__thumb">
                         <iframe
                             className="course-video__iframe"
-                            src={firstLecture}
+                            // src={firstLecture}
                             title="YouTube Video"
                             allow="autoplay; encrypted-media"
                             allowFullScreen
