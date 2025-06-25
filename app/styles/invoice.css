@@ -1,0 +1,117 @@
+.invoices {
+    width: 100%;
+    height: 84px;
+    background: #fff;
+    display: flex;
+    border: 1px solid #ccc;
+    align-items: center;
+    /* padding: 10px; */
+    border-radius: 8px;
+    transition: .25s;
+    /* cursor: pointer; */
+    margin-bottom: 10px;
+}
+
+.invoices:hover {
+    border-color: #21a2ff;
+    /* background: #ccc; */
+}
+
+.invoices-id {
+    /* color: #fff; */
+    /* font-weight: 600; */
+    /* background: #9bd4fc; */
+
+    /* background: #21a2ff; */
+    width: 20%;
+    padding-left: 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.invoices-amount {
+    /* background: yellow; */
+    /* background: #9bd4fc; */
+    width: 20%;
+    padding-left: 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    /* text-align: right; */
+}
+
+.invoices-date {
+    /* background: green; */
+    width: 20%;
+    padding-left: 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+}
+
+.invoices-status {
+    /* background: palegreen; */
+    width: 20%;
+    padding-left: 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+}
+
+.invoice-element__status {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    /* color: #fff; */
+
+}
+
+.status-done {
+    background-color: #beefc0; /* xanh lá đậm hơn */
+    color: green;
+    border-color: green;
+    /* padding: 4px 8px;
+    border-radius: 4px; */
+}
+
+.status-in-process {
+    background-color: #cce5ff; /* xanh biển nhạt */
+    color: #004085;     
+    border-color: #004085;
+    /* color: #856404; */
+    /* padding: 4px 8px; */
+    /* border-radius: 4px; */
+}
+
+.status-error {
+    text-align: center;
+    /* min-width: 50px; */
+    background-color: #ffd8d8; /* đỏ nhạt đậm */
+    color: red;
+    border-color: red;
+    /* color: #721c24;
+    padding: 4px 8px;
+    border-radius: 4px; */
+}
+
+.invoices-type {
+    /* background: #ccc; */
+    width: 20%;
+    /* padding-left: 10px; */
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.invoices-element__icon {
+    margin-right: 10px;
+}
+
+.invoices-element__type {
+    display: flex;
+    align-items: center;
+}

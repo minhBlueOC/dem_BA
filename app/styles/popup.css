@@ -1,0 +1,121 @@
+.popup {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.5s ease; 
+    pointer-events: auto;
+}
+
+.popup.isClosed {
+    opacity: 0;
+    pointer-events: none; /* ngăn người dùng click được khi ẩn */
+}
+
+.popup-inner {
+    width: 28%;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 30px 10px 12px 10px;
+    text-align: center;
+
+    transform: scale(1);
+    opacity: 1;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.popup.isClosed .popup-inner {
+    transform: scale(0.8);
+    opacity: 0;
+}
+
+
+.popup-image {
+    background: red;
+    border-radius: 50%;
+    display: inline-block;
+    padding: 10px;
+}
+
+.popup-image_second {
+    background: linear-gradient(45deg, #21a2ff, #8951ff);
+}
+
+.popup-image_third {
+    background: #2ecc71  ;
+}
+
+.popup-update {
+    background: linear-gradient(45deg, #21a2ff, #8951ff);
+}
+
+.popup-done {
+    background: green;
+}
+
+.popup-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.popup-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.popup-desc {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.popup-action {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.popup-button {
+    width: 150px;
+    background: #ccc;
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.popup-count {
+    width: 160px;
+    height: 45px;
+    border: 1px solid #ccc;
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.popup-button:hover {
+    opacity: 0.9;
+}
+
+.popup-button:empty {
+    display: none;
+}
+
+
+.popup-delete_btn {
+    border: 1px solid red;
+    background: #fff;
+    color: red;
+}

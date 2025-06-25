@@ -1,0 +1,118 @@
+.register-wrapper {
+    width: 100%;
+    height: 100vh;
+    background-image: url("/images/thumbLogin.jpg"); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.register-inner {
+    width: 25%;
+    height: 89%;
+    background: transparent; 
+    border-radius: 12px;
+    padding: 20px;
+    position: relative; 
+    z-index: 1; 
+}
+
+.register-inner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border: 1px solid #fff;
+    opacity: 0.5;
+    border-radius: 12px;
+    z-index: -1; 
+}
+
+.register-title {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+
+.register-form {
+    width: 100%;
+    height: calc(100% - 66px);
+    border-radius: 8px;
+}
+
+.register-group {
+    margin-bottom: 10px;
+}
+
+.register-label {
+    color: #fff;
+}
+
+.register-input {
+    margin-top: 5px;
+    background: #fff;
+    width: 100%;
+    height: 40px;
+    color: #000;
+    padding: 0 10px;
+    border-radius: 8px;
+    outline: none;
+    border: 2px solid #fff;
+    transition: .25s;
+}
+
+.register-input:focus {
+    border-color: #21a2ff;
+    background: #e4f4ff;
+}
+
+.register-text {
+    color: #f72e2e;
+    /* display: none; */
+    opacity: 0;
+}
+
+.register-btn {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.register-google {
+    background: transparent;
+    border: 1px solid #ccc;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.register-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.register-btnSignUp {
+    border-top: 1px solid #ccc;
+    padding-top: 15px;
+    margin-top: 30px;
+    width: 100%;
+    color: #ccc;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    transition: .25s;
+}
+
+.register-btnSignUp:hover {
+    color: #fff;
+}
