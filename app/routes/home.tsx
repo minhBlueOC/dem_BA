@@ -374,6 +374,7 @@ export default function Home() {
               value={inputValue}
               onChange={handleInputChange}
               onFocus={() => setShowResult(true)}
+              style={{ border: "1px solid #fff" }}
             />
 
             {/* Ô tìm kiếm */}
@@ -566,7 +567,7 @@ export default function Home() {
       </section>
 
       {/* Bài viết  */}
-      <section className="courses-container">
+      {/* <section className="courses-container">
         <h2 className="container-title">Bài viết nổi bật</h2>
         <div className="list-courses list-articles">
           {(articles.length > 0 ? articles : mockArticles).map((article) => (
@@ -579,7 +580,7 @@ export default function Home() {
             ></BlogCard>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* Actions */}
       {

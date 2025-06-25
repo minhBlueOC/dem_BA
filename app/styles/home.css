@@ -60,6 +60,7 @@
     color: #fff;
     border-color: #ccc;
     outline: none;
+    border: 1p solid #fff;
 }
 
 .show-header__input:focus {
