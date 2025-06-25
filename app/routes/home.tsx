@@ -374,7 +374,7 @@ export default function Home() {
               value={inputValue}
               onChange={handleInputChange}
               onFocus={() => setShowResult(true)}
-              style={{ border: "1px solid #fff" }}
+              style={{ border: "2px solid #fff", color: "#fff", outline: "none" }}
             />
 
             {/* Ô tìm kiếm */}
