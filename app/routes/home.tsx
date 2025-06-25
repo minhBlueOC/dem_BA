@@ -191,26 +191,26 @@ export default function Home() {
   const handleBalanceFromChild = (balance: number) => { setSoDu(balance); };
 
   // khoá học miễn phí
-  useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/api/courses/get-home-fee-courses`)
-      .then((res) => res.json())
-      .then((data) => {
-        setListFeeCourse(data);
-      })
-      .catch((err) => console.error(err));
-  }, []);
+  // useEffect(() => {
+  //   fetch(`${import.meta.env.VITE_API_URL}/api/courses/get-home-fee-courses`)
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setListFeeCourse(data);
+  //     })
+  //     .catch((err) => console.error(err));
+  // }, []);
 
   // khoá học có phjis
-  useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/api/courses/get-home-no-fee-courses`)
-      .then((res) => res.json())
-      .then((data) => {
-        setListFreeCourse(data);
-      })
-      .catch((err) => {
-        console.log("Lỗi: ", err);
-      })
-  }, []);
+  // useEffect(() => {
+  //   fetch(`${import.meta.env.VITE_API_URL}/api/courses/get-home-no-fee-courses`)
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setListFreeCourse(data);
+  //     })
+  //     .catch((err) => {
+  //       console.log("Lỗi: ", err);
+  //     })
+  // }, []);
 
   // xử lý input tìm kiếm
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -221,21 +221,21 @@ export default function Home() {
   };
 
   // call api tìm kiếm
-  useEffect(() => {
-    if (!inputValue.trim()) return;
+  // useEffect(() => {
+  //   if (!inputValue.trim()) return;
 
-    fetch(`${import.meta.env.VITE_API_URL}/api/courses/search/${inputValue}`)
-      .then((res) => {
-          if (!res.ok) {
-              console.log("Lỗi khi tìm kiếm");
-          }
-          return res.json();
-      })
-      .then((data) => {
-          setSearchResult(data);
-          console.log("Kết quả:", searchResult);
-      });
-  }, [inputValue]);
+  //   fetch(`${import.meta.env.VITE_API_URL}/api/courses/search/${inputValue}`)
+  //     .then((res) => {
+  //         if (!res.ok) {
+  //             console.log("Lỗi khi tìm kiếm");
+  //         }
+  //         return res.json();
+  //     })
+  //     .then((data) => {
+  //         setSearchResult(data);
+  //         console.log("Kết quả:", searchResult);
+  //     });
+  // }, [inputValue]);
 
   // chọn khoá học
   const handleCourseClick = (maKhoaHoc: String) => {
@@ -321,21 +321,21 @@ export default function Home() {
   }
 
   // Lấy ra 8 bài viết 
-  useEffect(() => {
-    const page = 1;
-    const pageSize = 8;
-    const url = `${import.meta.env.VITE_API_URL}/api/articles?page=${page}&pageSize=${pageSize}`;
+  // useEffect(() => {
+  //   const page = 1;
+  //   const pageSize = 8;
+  //   const url = `${import.meta.env.VITE_API_URL}/api/articles?page=${page}&pageSize=${pageSize}`;
 
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data.data);
-        setArticles(data.data);
-      })
-      .catch((err) => {
-        console.log("Lỗi: ", err);
-      });
-  }, [])
+  //   fetch(url)
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       console.log(data.data);
+  //       setArticles(data.data);
+  //     })
+  //     .catch((err) => {
+  //       console.log("Lỗi: ", err);
+  //     });
+  // }, [])
 
   return (
     <div className="home-Wrapper">
