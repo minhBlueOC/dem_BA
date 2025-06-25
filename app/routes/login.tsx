@@ -47,8 +47,9 @@ export default function Login() {
                         <span className="login-text">Mật khẩu không được để trống</span>
                     </div>
 
-                    <Button className="login-btn" type="submit" to="">Đăng nhập</Button>
+                    <Button className="login-btn" type="submit" to="/">Đăng nhập</Button>
                     <Button
+                        to="/"
                         className="login-btn login-google">
                         <img className="login-icon" src="./icons/Google.svg" alt="" />
                         Đăng nhập bằng Google
