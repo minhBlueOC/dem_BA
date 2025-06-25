@@ -54,7 +54,7 @@ export default function Navbar() {
           </li>
 
           <li className="navbar-item">
-            <Link to="/" className="navbar-link">
+            <Link to="/admin" className="navbar-link">
               <img src="/icons/Chat-bubbles-question.svg" alt="Hỏi đáp" className="navbar-icon" />
               <span>Hỏi đáp</span>
             </Link>
