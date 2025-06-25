@@ -84,7 +84,7 @@ export default function Register() {
             </div>
           </div>
 
-          <Button className="register-btn" type="submit" to="/login">Đăng ký</Button>
+          <Button className="register-btn login-btn" type="submit" to="/login">Đăng ký</Button>
 
           <Link to="/login" className="register-btnSignUp">Đăng nhập</Link>
         </form>
