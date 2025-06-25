@@ -257,7 +257,18 @@ export default function Learning() {
     // Accordion
     const [openIndexes, setOpenIndexes] = useState<number[]>([]);
 
-    const [baiHoc, setBaiHoc] = useState<any>(null);
+    const [baiHoc, setBaiHoc] = useState<any>({
+        maBaiHoc: "BH002",
+        tenBaiHoc: "Cài đặt môi trường",
+        moTaBaiHoc: "Hướng dẫn thiết lập môi trường lập trình JS.",
+        video: "https://www.youtube.com/embed/efI98nT8Ffo",
+        maChuongHoc: "CH001",
+        daHoanThanh: {
+            type: "Buffer",
+            data: [1],
+        },
+        maTienDo: "07453d52ecae585c9b349d50",
+    });
 
     // Câu hỏi
     const [listCauHoi, setListCauHoi] = useState<
