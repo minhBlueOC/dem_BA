@@ -8,7 +8,6 @@ import "../styles/Admin/admin.css"
 
 import Invoice from "~/components/Invoice";
 import { useEffect, useRef, useState } from "react";
-import { useGetInvoicesByUserIdQuery } from "~/services/apiInvoices";
 
 
 import type { invoices } from "../types/invoices";
@@ -80,21 +79,21 @@ export default function Invoices() {
 
   const maNguoiNap = typeof window !== "undefined" ? getUserId() : null;
 
-  const { data, isLoading, error } = useGetInvoicesByUserIdQuery({
-    maNguoiNap,
-    page,
-    pageSize,
-    count: firstCall,
-  });
+  // const { data, isLoading, error } = useGetInvoicesByUserIdQuery({
+  //   maNguoiNap,
+  //   page,
+  //   pageSize,
+  //   count: firstCall,
+  // });
 
   // Sau lần gọi đầu, tắt count
-  useEffect(() => {
-    if (firstCall && data?.pagination?.totalPages) {
-      setFirstCall(false);
-      console.log(data);
-      setTotalPages(data.pagination.totalPages);
-    }
-  }, [data, firstCall]);
+  // useEffect(() => {
+  //   if (firstCall && data?.pagination?.totalPages) {
+  //     setFirstCall(false);
+  //     console.log(data);
+  //     setTotalPages(data.pagination.totalPages);
+  //   }
+  // }, [data, firstCall]);
 
   const handlePageChange = (newPage: number) => { setPage(newPage); };
   // const goToItem = (item: any) => { navigate(`/admin-course-details/${item.maKhoaHoc}`); }; // Sửa thành sang trang chi tiết người dùng
@@ -178,7 +177,7 @@ export default function Invoices() {
         </div>
         
         <div className="invoices-page__inner">
-          {data && data.invoicesData.map((invoice: invoices) => (
+          {/* {data && data.invoicesData.map((invoice: invoices) => (
             <Invoice
               maHoaDon={invoice.maHoaDon}
               maNguoiDung={invoice.maNguoiDung}
@@ -187,7 +186,7 @@ export default function Invoices() {
               trangThai={invoice.trangThai}
               createdAt={invoice.createdAt}
             ></Invoice>
-          ))}
+          ))} */}
         </div>
       </div>       
     </div>

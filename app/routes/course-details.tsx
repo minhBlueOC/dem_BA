@@ -8,7 +8,6 @@ import Button from "~/components/Button";
 import "../styles/course-details.css";
 import "../styles/Responsive/course-details.css";
 import PopUp from "~/components/PopUp";
-import { useCreateBillsMutation } from "~/services/apiBills";
 
 import type { bills } from "~/types/bills";
 
@@ -212,7 +211,7 @@ export default function CourseDetails() {
         }
     };
 
-    const [createBill] = useCreateBillsMutation();
+    // const [createBill] = useCreateBillsMutation();
 
     // Thêm hóa đơn thanh toán sau khi thanh toán
     const insertBill = async () => { 
@@ -232,7 +231,7 @@ export default function CourseDetails() {
         }
 
         try {
-            await createBill(newBill);
+            // await createBill(newBill);
         } catch (err) {
             console.error("Lỗi khi tạo hóa đơn thanh toán.", err);
         }
