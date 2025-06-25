@@ -27,8 +27,6 @@ export default function Learning() {
         { maCauHoi: string; noiDung: string; danhSachDapAn: any[]} []
     >([]);
     const [isLoadingQuestions, setIsLoadingQuestions] = useState(true);
-
-    
     
     // Hàm xử lý mở/đóng accordion
     const toggleAccordion = (index: number) => {
@@ -47,10 +45,6 @@ export default function Learning() {
     const handleOpenMenu = () => setIsSidebarOpen(true); 
     const handleCloseMenu = () => setIsSidebarOpen(false); 
 
-    
-
-    
-        
     return (
         <div className="learning-wrapper">
             <LearningHeader title="Học bài" className="learning-header"></LearningHeader>

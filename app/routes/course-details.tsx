@@ -292,7 +292,7 @@ export default function CourseDetails() {
                             className="thumb-btn"
                             children="Đăng ký ngay"
                             type="button"
-                            to="/learning"
+                            to="/learning/:KH001"
                             />
 
                         <ul className="thumb-list">
